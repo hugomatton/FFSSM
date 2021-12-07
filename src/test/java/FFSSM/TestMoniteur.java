@@ -9,11 +9,13 @@ public class TestMoniteur {
 
     Moniteur president, moniteur;
     Club club, club1;
+    
 
     @BeforeEach
     public void setUp() throws Exception {
         moniteur = new Moniteur("gnegne", "Mickey", "Mouse", "Toulouse", "08 98 43 36 76", LocalDate.of(1950,2,2), 2, 1, GroupeSanguin.BPLUS);
         president = new Moniteur("ouloulou", "Ralise", "Bengauthier", "Toulouse", "08 98 43 36 76", LocalDate.of(1950,2,2), 2, 1, GroupeSanguin.BPLUS);
+        
         club = new Club(president, "Isis", "Tecou", "09 87 65 43 26");
         club1 = new Club(president, "Epita", "Gaillac", "000 000 000");
 

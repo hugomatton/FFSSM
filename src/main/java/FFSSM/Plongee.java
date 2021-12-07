@@ -41,6 +41,10 @@ public class Plongee {
 		return date;
 	}
 
+	public Set<Optional<Licence>> getPalanquee(){
+		return palanquee;
+	}
+
 	/**
 	 * Détermine si la plongée est conforme. 
 	 * Une plongée est conforme si tous les plongeurs de la palanquée ont une

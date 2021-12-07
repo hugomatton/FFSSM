@@ -19,6 +19,7 @@ public class TestLicence {
         plongeur = new Plongeur("123", "MATTON", "Philippe", "Castanet", "09 87 65 34 32", LocalDate.of(1972,1,2), 2, GroupeSanguin.AMOINS);
         licenceValide = new Licence(plongeur, "12", LocalDate.of(2019,5,5),club);
         licenceNonValide = new Licence(plongeur, "12", LocalDate.of(2018,5,5),club);
+        
     }
 
     @Test
