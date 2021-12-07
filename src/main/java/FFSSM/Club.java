@@ -17,9 +17,15 @@ public class Club {
 
     public String telephone;
 
-    public Club(Moniteur président, String nom, String telephone) {
+    public Set<Plongee> activites = new HashSet<Plongee>();
+
+    public Set<Licence> licensesDelivrees = new HashSet<Licence>();
+
+
+    public Club(Moniteur président, String nom, String adresse, String telephone) {
         this.president = président;
         this.nom = nom;
+        this.adresse = adresse;
         this.telephone = telephone;
     }
 
@@ -30,8 +36,13 @@ public class Club {
      * @return l'ensemble des plongées non conformes
      */
     public Set<Plongee> plongeesNonConformes() {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        Set<Plongee> res = new HashSet<Plongee>();
+        for(Plongee p : activites){
+            if(!p.estConforme()){
+                res.add(p);
+            }
+        }
+        return res;
     }
 
     /**
@@ -39,10 +50,16 @@ public class Club {
      * @param p la nouvelle plongée
      */
     public void organisePlongee(Plongee p) {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        activites.add(p);
     }
     
+    /**
+     * Enregistre une nouvelle license délivrée par ce club
+     * @param l
+     */
+    public void ajouterLicence(Licence l){
+        licensesDelivrees.add(l);
+    }
     
     public Moniteur getPresident() {
         return president;
@@ -74,6 +91,14 @@ public class Club {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public Set<Plongee> getActivitee(){
+        return activites;
+    }
+
+    public Set<Licence> getLicence(){
+        return licensesDelivrees;
     }
 
     @Override
